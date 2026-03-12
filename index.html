@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>阿簽 YouTube 官方網站</title>
     <style>
-        /* 網站基礎變數設定：高飽和度色彩，拒絕灰色！ */
+        /* 網站基礎變數設定 */
         :root {
             --primary-color: #FF0055;    /* 鮮豔桃紅 */
             --secondary-color: #0044FF;  /* 飽和亮藍 */
-            --bg-cyan: #00E5FF;          /* 飽和青色 */
-            --bg-yellow: #FFE600;        /* 飽和亮黃 */
-            --card-bg: #FFFFFF;          /* 純白 */
-            --text-color: #000055;       /* 深藍色代替灰色/黑色字體 */
-            /* 優先使用指定的字體，並提供備用字體 */
+            --light-blue: #80D4FF;       /* 第二段：淺藍 */
+            --light-green: #85E085;      /* 第三段：淺綠 */
+            --bg-white: #FFFFFF;         /* 第四段：白色 */
+            --text-color: #000055;       
             --font-family: '王翰宗特黑體', '王漢宗特黑體', '微軟正黑體', 'Arial Black', sans-serif;
         }
 
@@ -21,18 +20,17 @@
             font-family: var(--font-family);
             margin: 0;
             padding: 0;
-            background-color: var(--bg-cyan);
             color: var(--text-color);
-            scroll-behavior: smooth; /* 點擊導覽列時會有平滑滾動效果 */
+            scroll-behavior: smooth;
         }
 
-        /* 頂部導覽列 (圓角、飽和色) */
+        /* 頂部導覽列 */
         nav {
             position: fixed;
             top: 20px;
             left: 5%;
             width: 90%;
-            background-color: var(--card-bg);
+            background-color: var(--bg-white);
             border-radius: 50px;
             display: flex;
             justify-content: space-between;
@@ -41,7 +39,7 @@
             box-sizing: border-box;
             z-index: 1000;
             border: 5px solid var(--secondary-color);
-            box-shadow: 0 8px 0 var(--secondary-color); /* 用色彩陰影取代灰色陰影 */
+            box-shadow: 0 8px 0 var(--secondary-color);
         }
 
         .nav-logo {
@@ -59,6 +57,8 @@
             height: 60px;
             border-radius: 50%;
             border: 4px solid var(--primary-color);
+            object-fit: cover;
+            background-color: var(--light-blue);
         }
 
         .nav-links {
@@ -78,12 +78,11 @@
         }
 
         .nav-links a:hover {
-            background-color: var(--bg-yellow);
-            color: var(--secondary-color);
+            background-color: var(--primary-color);
+            color: var(--bg-white);
             transform: translateY(-3px);
         }
 
-        /* 副品牌按鈕特化 */
         .sub-brand-btn {
             background-color: var(--primary-color);
             color: #FFF !important;
@@ -108,15 +107,27 @@
 
         h2 {
             font-size: 56px;
-            color: var(--secondary-color);
             margin-bottom: 40px;
             text-align: center;
-            text-shadow: 3px 3px 0px var(--bg-yellow);
         }
 
-        /* 熱門影片區塊 */
+        /* 第一段：封面區塊 (已替換為你提供的新圖床連結，並移除所有干擾圖面的設計) */
+        #cover {
+            background-image: url('https://i.ibb.co/Q7m6sWfF/A-CHIEN.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 0; /* 讓圖片完整顯示，不需要內邊距 */
+        }
+
+        /* 第二段：熱門影片 (淺藍背景) */
         #hot-videos {
-            background-color: var(--bg-cyan);
+            background-color: var(--light-blue);
+        }
+        
+        #hot-videos h2 {
+            color: var(--secondary-color);
+            text-shadow: 3px 3px 0px #FFF;
         }
 
         .video-container {
@@ -127,7 +138,7 @@
             overflow: hidden;
             border: 10px solid var(--primary-color);
             background-color: var(--secondary-color);
-            box-shadow: 0 15px 0 var(--primary-color);
+            box-shadow: 0 15px 0 var(--secondary-color);
         }
 
         iframe {
@@ -136,18 +147,18 @@
             border: none;
         }
 
-        /* 特點、專業區塊 */
+        /* 第三段：特點、專業區塊 (淺綠背景) */
         #features {
-            background-color: var(--secondary-color);
+            background-color: var(--light-green);
         }
 
         #features h2 {
-            color: var(--bg-yellow);
-            text-shadow: 3px 3px 0px var(--primary-color);
+            color: var(--secondary-color);
+            text-shadow: 3px 3px 0px #FFF;
         }
 
         .feature-card {
-            background-color: var(--card-bg);
+            background-color: var(--bg-white);
             color: var(--text-color);
             padding: 60px;
             border-radius: 50px;
@@ -155,19 +166,19 @@
             line-height: 1.8;
             max-width: 900px;
             text-align: center;
-            border: 8px solid var(--bg-yellow);
-            box-shadow: 0 15px 0 var(--bg-yellow);
+            border: 8px solid var(--secondary-color);
+            box-shadow: 0 15px 0 var(--secondary-color);
             font-weight: bold;
         }
 
-        /* 訂閱區塊 */
+        /* 第四段：訂閱區塊 (白色背景) */
         #subscribe {
-            background-color: var(--bg-yellow);
+            background-color: var(--bg-white);
         }
 
         #subscribe h2 {
-            color: var(--primary-color);
-            text-shadow: 3px 3px 0px var(--card-bg);
+            color: var(--secondary-color);
+            text-shadow: 3px 3px 0px var(--light-blue);
         }
 
         .subscribe-btn {
@@ -179,7 +190,7 @@
             text-decoration: none;
             padding: 25px 80px;
             border-radius: 60px;
-            border: 8px solid #FFF;
+            border: 8px solid var(--secondary-color);
             box-shadow: 0 12px 0 var(--secondary-color);
             transition: 0.2s;
         }
@@ -191,7 +202,7 @@
 
         /* 底部版權聲明 */
         footer {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: #FFF;
             text-align: center;
             padding: 40px;
@@ -199,19 +210,9 @@
             font-weight: bold;
         }
 
-        /* 簡單的響應式設計 (手機版) */
         @media (max-width: 1024px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-                padding: 20px;
-                border-radius: 30px;
-            }
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            section { padding-top: 200px; }
+            nav { flex-direction: column; gap: 15px; padding: 20px; border-radius: 30px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
             h2 { font-size: 40px; }
             .feature-card { font-size: 20px; padding: 30px; }
             .subscribe-btn { font-size: 28px; padding: 20px 40px; }
@@ -222,7 +223,7 @@
 
     <nav>
         <a href="#" class="nav-logo">
-            <img src="https://yt3.ggpht.com/uMc1GvPL25Mkzs08uJRqKub7n8_oS2siFda8F1FHdtyN_0M--Vc0VVJlsYVGm4iXkh2NaLqma4SE=s640-c-fcrop64=1,00000000ffffffff-rw-nd-v1；幫我留下第一個區段前放置封面圖的區域。主題顏色為橘色、淺藍、淺綠。" alt="阿簽頭貼">
+            <img src="https://googleusercontent.com/profile/picture/1" alt="阿簽頭貼" onerror="this.src='https://via.placeholder.com/60/80D4FF/000055?text=Logo'">
             阿簽
         </a>
         <div class="nav-links">
@@ -232,6 +233,9 @@
             <a href="https://youtube.com/@shanlaoban" target="_blank" class="sub-brand-btn">前往副頻道</a>
         </div>
     </nav>
+
+    <section id="cover">
+    </section>
 
     <section id="hot-videos">
         <h2>熱門影片</h2>
